@@ -1,16 +1,35 @@
 const app = require('express')()
 const { v4 } = require('uuid')
+require('dotenv').config()
 
-app.get('/api', (req, res) => {
-  const path = `/item/${v4()}`
-  res.setHeader('Content-Type', 'text/html')
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`)
+// Database (Cloud SQL)
+let dbip = process.env.dbip;
+let dbuser = process.env.dbuser;
+let dbpassword = process.env.dbpassword;
+let db = process.env.db;
+
+const mysql = require('mysql');
+
+var conn = mysql.createConnection({
+  host: dbip,
+  user: dbuser,
+  password: dbpassword,
+  database: db
 })
 
-app.get('/api/item/:slug', (req, res) => {
-  const { slug } = req.params
-  res.end(`Item: ${slug}`)
+// Create a random UUID for client
+app.get('/registerinit', (req, res) => {
+  let uuid = v4();
+
+  conn.connect();
+  conn.query('INSERT INTO users (uuid, data) VALUES (' + uuid + ',' + JSON.stringify({registered: false}) + ')')
+  conn.end();
+
+  res.json({uuid: uuid});
+})
+
+app.get('/register', (req, res) => {
+  
 })
 
 module.exports = app
