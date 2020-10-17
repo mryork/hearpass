@@ -3,6 +3,8 @@ body{
     padding: 0;
     font-size: 2em;
     min-height: 100%;
+    font-family: 'Krona One', sans-serif;
+    font-size: 1em;
 }
 
 .phone-container {
@@ -12,8 +14,8 @@ body{
 .grid-container {
     display: grid;
     height: 100vh;
-    background-color: white;
-    grid-template-columns: 1fr 7fr;
+    background-color: black;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: column;
     align-content: stretch;
@@ -33,6 +35,7 @@ body{
     grid-row-start: 1;
     grid-row-end: 4;
     font-size: 1em;
+    margin: 15px 0px;
     border-radius: 0px 25px 25px 0px;
 }
 
