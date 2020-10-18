@@ -65,7 +65,7 @@ this.handleGestureEnd = function(evt) {
 
     var overElem = document.elementFromPoint (posX, posY);
 
-    if (overElem && overElem.tagName === undefined) {   // in case of text nodes (Opera)
+    if (overElem && (overElem.tagName === undefined || overElem.tagName == "a" || overElem.tagName == "p")) {   // in case of text nodes (Opera)
         overElem = overElem.parentNode; // the parent node will be selected
     }
 
@@ -77,7 +77,7 @@ this.handleGestureEnd = function(evt) {
         selElem = null;
     }
 
-    if (overElem && overElem.tagName.toLowerCase () != "body" && overElem.tagName.toLowerCase () != "html") {
+    if (overElem && overElem.tagName.toLowerCase () != "body" && overElem.tagName.toLowerCase () != "html" && !overElem.classList.contains("grid-container"))  {
         selElem = overElem; // stores the selected element
         origBorder = overElem.style.border; // stores the border settings of the selected element
         overElem.style.border = "3px solid red";    // draws selection border
