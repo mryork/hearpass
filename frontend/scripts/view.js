@@ -45,3 +45,13 @@ this.handleGestureEnd = function(evt) {
     initialTouchPos = null;
   }.bind(this);
   */
+
+ function enterHandler(ev) {
+    // Process the pointerenter event
+    alert("PASSWORDS");
+    console.log("PASSWORDS")
+  }
+  function init() {
+    let el = document.getElementsByClassName("item-password");
+    el.onpointerenter = enterHandler;
+  }
