@@ -83,6 +83,12 @@ this.handleGestureEnd = function(evt) {
         origBorder = overElem.style.border; // stores the border settings of the selected element
         //overElem.style.border = "3px solid red";    // draws selection border
         overElem.style.opacity = .8;
+        var audId = selElem.getAttribute("aud");
+        if(audId!=null){
+            var audio = document.getElementById("aud-" + selElem.getAttribute("aud") + "");
+            audio.play();
+        }
+        
     }
 
  }
