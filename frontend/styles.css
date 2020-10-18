@@ -2,22 +2,23 @@ body{
     margin: 0 auto;
     padding: 0;
     font-size: 2em;
-    min-height: 100%;
     font-family: 'Krona One', sans-serif;
     font-size: 1em;
 
-    overflow-x: hidden; 
-    overflow-y: auto;
+    overflow: hidden;
+    position: fixed;
 }
 
-.phone-container {
+#phone-container{
     height: 100vh;
+    width: 100vw;
 }
+
 
 .grid-container {
     display: grid;
-    height: 100vh;
     background-color: black;
+    height: 100%;
     /* grid-gap: 10px; */
     grid-auto-flow: column;
     align-content: stretch;

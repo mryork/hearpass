@@ -1,5 +1,9 @@
 // THE ACCESSIBILITY PART OF THE PROJECT
+/*
+document.getElementById("phone-container").style.width = window.screen.width;
+document.getElementById("phone-container").style.height = (window.screen.height)/2;
 
+/*
 // Check if pointer events are supported.
 if (window.PointerEvent) {
     // Add Pointer Event Listener
@@ -41,3 +45,4 @@ this.handleGestureEnd = function(evt) {
   
     initialTouchPos = null;
   }.bind(this);
+  */
