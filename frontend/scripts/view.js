@@ -1,5 +1,4 @@
 // THE ACCESSIBILITY PART OF THE PROJECT
-
 console.log("JS connected");
 
 /*
@@ -62,7 +61,7 @@ this.handleGestureEnd = function(evt) {
  var origBorder = "";    // stores the border settings of the selected element
 
  function OnTouchMove (event) {
-    var posX = event.touches[0].x, posY = event.touches[0].y;
+    var posX = event.touches[0].clientX, posY = event.touches[0].clientY;
 
     var overElem = document.elementFromPoint (posX, posY);
 
@@ -86,4 +85,4 @@ this.handleGestureEnd = function(evt) {
 
  }
 
- document.addEventListener("touchmove", OnTouchMove (event))
+document.body.addEventListener("touchmove", OnTouchMove)
