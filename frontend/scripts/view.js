@@ -2,6 +2,7 @@
 
 console.log("JS connected");
 document.getElementById("phone-container").style.height = "" + window.screen.height + "px";
+document.getElementById("phone-container").style.width = "" + window.screen.width + "px";
 
 /*
 // Check if pointer events are supported.
