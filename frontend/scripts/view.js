@@ -85,3 +85,5 @@ this.handleGestureEnd = function(evt) {
     }
 
  }
+
+ Window.addEventListener("touchmove", OnTouchMove (event))
