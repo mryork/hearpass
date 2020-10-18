@@ -46,6 +46,7 @@ this.handleGestureEnd = function(evt) {
   }.bind(this);
   */
 
+  /*
  function enterHandler(ev) {
     // Process the pointerenter event
     alert("PASSWORDS");
@@ -55,3 +56,32 @@ this.handleGestureEnd = function(evt) {
     let el = document.getElementsByClassName("item-password");
     el.ontouchmove = enterHandler;
   }
+  */
+
+ var selElem = null; // store the currently selected element
+ var origBorder = "";    // stores the border settings of the selected element
+
+ function OnTouchMove (event) {
+    var posX = event.clientX, posY = event.clientY;
+
+    var overElem = document.elementFromPoint (posX, posY);
+
+    if (overElem && overElem.tagName === undefined) {   // in case of text nodes (Opera)
+        overElem = overElem.parentNode; // the parent node will be selected
+    }
+
+    if (selElem) {  // if there was previously selected element
+        if (selElem == overElem) {  // if mouse is over the previously selected element
+            return; // does not need to update the selection border
+        }
+        selElem.style.border = origBorder;  // set border to the stored value
+        selElem = null;
+    }
+
+    if (overElem && overElem.tagName.toLowerCase () != "body" && overElem.tagName.toLowerCase () != "html") {
+        selElem = overElem; // stores the selected element
+        origBorder = overElem.style.border; // stores the border settings of the selected element
+        overElem.style.border = "3px solid red";    // draws selection border
+    }
+
+ }
