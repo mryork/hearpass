@@ -65,7 +65,7 @@ this.handleGestureEnd = function(evt) {
 
     var overElem = document.elementFromPoint (posX, posY);
 
-    if (overElem && (overElem.tagName === undefined || overElem.tagName == "A" || overElem.tagName == "P")) {   // in case of text nodes (Opera)
+    if (overElem && (!overElem.classList.contains("selectable")  || overElem.tagName === undefined )) {   // in case of text nodes (Opera)
         overElem = overElem.parentNode; // the parent node will be selected
     }
 
