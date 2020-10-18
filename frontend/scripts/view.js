@@ -53,5 +53,5 @@ this.handleGestureEnd = function(evt) {
   }
   function init() {
     let el = document.getElementsByClassName("item-password");
-    el.onpointerenter = enterHandler;
+    el.onmouseenter = enterHandler;
   }
