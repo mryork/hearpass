@@ -1,7 +1,7 @@
 // THE ACCESSIBILITY PART OF THE PROJECT
-/*
-document.getElementById("phone-container").style.width = window.screen.width;
-document.getElementById("phone-container").style.height = (window.screen.height)/2;
+
+console.log("JS connected");
+document.getElementById("phone-container").style.height = "" + window.screen.height + "px";
 
 /*
 // Check if pointer events are supported.
