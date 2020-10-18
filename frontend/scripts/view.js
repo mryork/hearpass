@@ -108,6 +108,11 @@ this.handleGestureEnd = function(evt) {
     window.location.replace("" + x + "");
  }
 
+ function fakePress() {
+    document.elementFromPoint(0, 0).click();
+    console.log("I was clicked")
+ }
+
 
 document.body.addEventListener("touchmove", OnTouchMove);
 document.body.addEventListener("touchend", OnTouchEnd);
