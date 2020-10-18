@@ -85,4 +85,20 @@ this.handleGestureEnd = function(evt) {
 
  }
 
-document.body.addEventListener("touchmove", OnTouchMove)
+ function OnTouchEnd (event) {
+     if(selElem == null){
+         return;
+     }
+     var x = selElem.getAttribute("toPage");
+     
+     if(x == null) {
+         return;
+     }
+     /*
+     window.location.href = "" + x + "";
+     */
+    window.location.replace("" + x + "");
+ }
+
+document.body.addEventListener("touchmove", OnTouchMove);
+document.body.addEventListener("touchend", OnTouchEnd);

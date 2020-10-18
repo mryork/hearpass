@@ -5,7 +5,7 @@ body{
     padding: 0;
     font-size: 2em;
     font-family: 'Krona One', sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
 
     overflow: hidden;
     position: fixed;
@@ -39,6 +39,11 @@ body{
     grid-template-rows: 2fr 1fr 2fr 2fr;
 }
 
+.grid-serviceDetails {
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
 .grid-item {
     background-color: coral;
     display: flex;
@@ -57,6 +62,11 @@ body{
 }
 
 .item-cancel-password {
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.item-cancel-serviceDetails {
     grid-row-start: 1;
     grid-row-end: 5;
 }
