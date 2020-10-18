@@ -62,7 +62,7 @@ this.handleGestureEnd = function(evt) {
  var origBorder = "";    // stores the border settings of the selected element
 
  function OnTouchMove (event) {
-    var posX = event.clientX, posY = event.clientY;
+    var posX = event.touches[0].x, posY = event.touches[0].y;
 
     var overElem = document.elementFromPoint (posX, posY);
 
@@ -86,4 +86,4 @@ this.handleGestureEnd = function(evt) {
 
  }
 
- Document.addEventListener("touchmove", OnTouchMove (event))
+ document.addEventListener("touchmove", OnTouchMove (event))
