@@ -73,14 +73,16 @@ this.handleGestureEnd = function(evt) {
         if (selElem == overElem) {  // if mouse is over the previously selected element
             return; // does not need to update the selection border
         }
-        selElem.style.border = origBorder;  // set border to the stored value
+        //selElem.style.border = origBorder;  // set border to the stored value
+        selElem.style.opacity = 1;
         selElem = null;
     }
 
     if (overElem && overElem.tagName.toLowerCase () != "body" && overElem.tagName.toLowerCase () != "html" && !overElem.classList.contains("unselectable"))  {
         selElem = overElem; // stores the selected element
         origBorder = overElem.style.border; // stores the border settings of the selected element
-        overElem.style.border = "3px solid red";    // draws selection border
+        //overElem.style.border = "3px solid red";    // draws selection border
+        overElem.style.opacity = .8;
     }
 
  }
@@ -99,6 +101,7 @@ this.handleGestureEnd = function(evt) {
      */
     window.location.replace("" + x + "");
  }
+
 
 document.body.addEventListener("touchmove", OnTouchMove);
 document.body.addEventListener("touchend", OnTouchEnd);
