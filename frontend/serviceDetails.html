@@ -22,15 +22,31 @@
 <body>
     <div id="phone-container">
         <div class="grid-container selectable unselectable grid-serviceDetails">
-            <div class="grid-item selectable item-cancel item-cancel-serviceDetails"><p>C <br> A <br> N <br> C <br> E <br> L </p></div>
-            <div class="grid-item selectable item-general">GMAIL</div>
-            <div class="grid-item selectable item-general">USERNAME:<br>kapoole</div>
-            <div class="grid-item selectable item-general">PASSWORD:<br>****************</div>
-            <div class="grid-item selectable item-general" toPage="password.html">PREVIOUS SCREEN</div>
+            <div class="grid-item selectable item-cancel item-cancel-serviceDetails" aud="cancel"><p>C <br> A <br> N <br> C <br> E <br> L </p></div>
+            <div class="grid-item selectable item-general" aud="service-title">GMAIL</div>
+            <div class="grid-item selectable item-general" aud="username">USERNAME:<br>kapoole</div>
+            <div class="grid-item selectable item-general" aud="password">PASSWORD:<br>****************</div>
+            <div class="grid-item selectable item-general" toPage="password.html" aud="previous-screen">PREVIOUS SCREEN</div>
             
         </div>
         
     </div>
+
+<audio  id="aud-cancel">
+    <source src="audio/cancel.mp3"></source>
+</audio>
+<audio  id="aud-service-title">
+    <source src="audio/gmail.mp3"></source>
+</audio>
+<audio  id="aud-username">
+    <source src="audio/username.mp3"></source>
+</audio>
+<audio  id="aud-password">
+    <source src="audio/pass.mp3"></source>
+</audio>
+<audio  id="aud-previous-screen">
+    <source src="audio/previousscreen.mp3"></source>
+</audio>
    
 <script src="./scripts/view.js"></script>
 

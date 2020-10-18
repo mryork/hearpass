@@ -22,15 +22,23 @@
 <body >
     <div id="phone-container">
         <div class="grid-container selectable unselectable grid-home">
-            <div class="grid-item selectable item-cancel" ><p>C <br> A <br> N <br> C <br> E <br> L </p></div>
-           <div class="grid-item selectable item-general item-password" toPage="password.html">PASSWORDS</div> 
-            <div class="grid-item selectable item-general item-settings">SETTINGS</div>
+            <div class="grid-item selectable item-cancel" aud="cancel"><p>C <br> A <br> N <br> C <br> E <br> L </p></div>
+           <div class="grid-item selectable item-general item-password" toPage="password.html" aud="passwords">PASSWORDS</div> 
+            <div class="grid-item selectable item-general item-settings" aud="settings">SETTINGS</div>
             
         </div>
         
     </div>
 
-    <div></div>
+<audio  id="aud-cancel">
+    <source src="audio/cancel.mp3"></source>
+</audio>
+<audio  id="aud-passwords">
+    <source src="audio/pass.mp3"></source>
+</audio>
+<audio  id="aud-settings">
+    <source src="audio/settings.mp3"></source>
+</audio>
    
 
 <script src="./scripts/view.js"></script>
